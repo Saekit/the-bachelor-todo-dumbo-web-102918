@@ -11,25 +11,6 @@ def get_first_name_of_season_winner(data, season)
   end
 end
 
-# def get_first_name_of_season_winner(data,season)
-#  data[season.to_sym].each do |into_array|
-#    if into_array[:status] =="Winner"
-#      return into_array[:name].split(" ")[0]
-#    end
-#  end
-# end
-
-def get_first_name_of_season_winner(data, season)
-  data[season].each do |people|
-    people.each do |k,v|
-      if v == "Winner"
-      full_name = people["name"]
-          return full_name.split(' ').first
-        end
-      end
-    end
-  end
-
 
 # def get_contestant_name(data, occupation)
 #   # code here
