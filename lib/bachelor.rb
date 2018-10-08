@@ -17,7 +17,8 @@ def get_contestant_name(data, occupation)
     contestants.each do |attribute|
       attribute.each do |key, value|
         if value == occupation
-          return contestants["name"].split(' ')
+          full_name = contestants["name"]
+          return full_name
         end
       end
     end
