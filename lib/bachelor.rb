@@ -1,9 +1,38 @@
-def get_first_name_of_season_winner(data, season)
-  # code here
+require 'pry'
+
+def get_first_name_of_season_winner(data, season_num)
+  winner = []
+  data.each do |season, contestants|
+    if season.to_s == season_num
+      contestants.each do |attributes|
+        if attributes[:status] == "Winner"
+          return attributes[:name].split(' ').first
+        end
+      end
+    end
+  end
 end
 
+# def get_first_name_of_season_winner(data,season)
+#  data[season.to_sym].each do |into_array|
+#    if into_array[:status] =="Winner"
+#      return into_array[:name].split(" ")[0]
+#    end
+#  end
+# end
+
+
+# def get_contestant_name(data, occupation)
+#   # code here
+# end
 def get_contestant_name(data, occupation)
-  # code here
+data.each do |season, season_array|
+  season_array.each do |into_array|
+    if into_array[:occupation] == occupation
+      return into_array[:name]
+      end
+    end
+  end
 end
 
 def count_contestants_by_hometown(data, hometown)
