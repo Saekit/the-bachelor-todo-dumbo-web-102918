@@ -17,7 +17,7 @@ def get_contestant_name(data, occupation)
     contestants.each do |attribute|
       attribute.each do |key, value|
         if value == occupation
-          full_name = attribute["name"]
+          return attribute["name"]
         end
       end
     end
