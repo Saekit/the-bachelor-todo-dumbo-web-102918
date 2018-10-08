@@ -1,17 +1,17 @@
 require 'pry'
 
-def get_first_name_of_season_winner(data, season_num)
-  winner = []
-  data.each do |season, contestants|
-    if season.to_s == season_num
-      contestants.each do |attributes|
-        if attributes[:status] == "Winner"
-          return attributes[:name].split(' ').first
-        end
-      end
-    end
-  end
-end
+# def get_first_name_of_season_winner(data, season_num)
+#   winner = []
+#   data.each do |season, contestants|
+#     if season.to_s == season_num
+#       contestants.each do |attributes|
+#         if attributes[:status] == "Winner"
+#           return attributes[:name].split(' ').first
+#         end
+#       end
+#     end
+#   end
+# end
 
 # def get_first_name_of_season_winner(data,season)
 #  data[season.to_sym].each do |into_array|
@@ -20,6 +20,18 @@ end
 #    end
 #  end
 # end
+
+def get_first_name_of_season_winner(data, season)
+  data[season].each do |people|
+    people.each do |k,v|
+      if v == "Winner"
+        full_name = people["name"]
+          return full_name.split(' ').first
+        end 
+      end
+    end
+  end	
+end
 
 
 # def get_contestant_name(data, occupation)
